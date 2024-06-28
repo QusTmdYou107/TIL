@@ -1,4 +1,4 @@
-# lateinit, lazy
+# lateinit, by lazy
 
 ### lateinit
 
