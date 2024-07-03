@@ -11,11 +11,11 @@
 // Slot API 선언
 @Composable
 fun SlotDemo(middleContent: @Composable () -> Unit) {
-	Column {
-		Text("Top Text")
+    Column {
+	Text("Top Text")
         middleContent()
         Text("Bottom Text")
-	}
+    }
 }
 
 @Composable
