@@ -45,3 +45,15 @@ val list = mutableListOf(10 to "a", 2 to "b", 30 to "c")
 list.sortBy { it.first } // 객체의 first 값을 기준으로 정렬한다.
 pritnln(list) // [(2, b), (10, a), (30, c)]
 ```
+
+# map()
+
+- Collection을 구성하는 각 요소들을 특정 표현식에 의해 변형시킨 뒤 새로운 Collection을 반환한다.
+- 고차함수이다.
+
+```Kotlin
+val list = List<Int> = listOf(10, 20, 30)
+val listToMap = list.map { it + 10 }
+// list의 각 요소들에 10을 더한 값을 가진 새로운 Collection을 반환하게 된다.
+println(listToMap) // [20, 30, 40]
+```
