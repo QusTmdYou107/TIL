@@ -46,6 +46,8 @@ list.sortBy { it.first } // 객체의 first 값을 기준으로 정렬한다.
 pritnln(list) // [(2, b), (10, a), (30, c)]
 ```
 
+<br>
+
 # map()
 
 - Collection을 구성하는 각 요소들을 특정 표현식에 의해 변형시킨 뒤 새로운 Collection을 반환한다.
@@ -56,4 +58,42 @@ val list = List<Int> = listOf(10, 20, 30)
 val listToMap = list.map { it + 10 }
 // list의 각 요소들에 10을 더한 값을 가진 새로운 Collection을 반환하게 된다.
 println(listToMap) // [20, 30, 40]
+```
+
+<br>
+
+# forEach
+
+- collection을 하나씩 순회할 수 있게 해주는 함수이다.
+
+```Kotlin
+fun main() {
+  val list: List<String> = listOf("item1", "item2", "item3")
+
+  list.forEach {
+    println(it)
+  }
+  // 출력 결과 :
+  // item1
+  // item2
+  // item3
+}
+```
+
+### forEachIndexed
+
+- 요소들의 인덱스도 함께 사용할 수 있도록 해주는 함수이며, 고차함수이다.
+
+```Kotlin
+fun main() {
+  val list: List<String> = listOf("item1", "item2", "item3")
+
+  list.forEachIndexed { index, item ->
+    println("${index} : ${item}")
+  }
+  // 출력 결과 :
+  // 0 : item1
+  // 1 : item2
+  // 2 : item3
+}
 ```
