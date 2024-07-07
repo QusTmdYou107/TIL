@@ -82,7 +82,7 @@ fun main() {
 
 ### forEachIndexed
 
-- 요소들의 인덱스도 함께 사용할 수 있도록 해주는 함수이며, 고차함수이다.
+- 요소들의 인덱스도 함께 사용할 수 있도록 해주는 고차함수이다.
 
 ```Kotlin
 fun main() {
@@ -95,5 +95,58 @@ fun main() {
   // 0 : item1
   // 1 : item2
   // 2 : item3
+}
+```
+
+<br>
+
+# filter()
+
+- 특정 조건에 부합하는 요소만 걸렁내서 새로운 Collection을 반환해주는 고차함수이다.
+
+```Kotlin
+fun main() {
+  val list: List<Int> listOf(1, 2, 3, 4, 5, 6)
+
+  val listToFilter {
+    it % 2 == 0
+  }
+  println(listToFilter)
+  // 출력 결과 : [2, 4, 6]
+}
+```
+
+<br>
+
+# find()
+
+- 최초로 조건에 부합하는 요소를 반환해주는 함수이다.
+- 조건에 부합하는 요소가 발견되지 않는다면 null을 반환한다.
+
+```Kotlin
+fun main() {
+  val list: List<Int> = listOf(1, 2, 3, 4, 5, 6)
+
+  val listToFind = list.find {
+      it % 2 == 0
+  }
+  println(listToFind)
+  //출력 결과 : 2
+}
+```
+
+### findLast()
+
+- 조건에 부합하는 마지막 요소를 반환해주는 함수이다.
+
+```Kotlin
+fun main() {
+  val list: List<Int> = listOf(1, 2, 3, 4, 5, 6)
+
+  val listToFindLast = a.findLast {
+        it % 2 == 0
+  }
+  println(listToFindLast)
+  //출력 결과 : 6
 }
 ```
