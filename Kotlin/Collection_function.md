@@ -153,9 +153,12 @@ fun main() {
 
 <br>
 
-# any
+# any, all(), none()
 
-- Collection의 요소들을 하나씩 검사해보며 Boolean을 반환하는 함수이다.
+- Collection의 요소들을 하나씩 검사해보며 Boolean을 반환하는 함수들이다.
+
+### any()
+
 - Collection의 요소들 중 조건에 만족하는게 하나라도 있다면
   true를 반환한다.
 
@@ -163,6 +166,45 @@ fun main() {
 fun main() {
   val list: List<Int> = listOf(1, 2, 3, 4)
 
-  if(list.any { it % 2 == 0})
+  if(list.any { it % 2 == 0} ) {
+    println("true 입니다.")
+  }
+  // 출력결과 : true 입니다.
+
+}
+```
+
+<br>
+
+### all()
+
+- Collection의 요소들이 모두 조건에 만족하면 true를 반환한다.
+
+```Kotlin
+fun main() {
+  val list: List<Int> = listOf(2, 4, 6, 8)
+
+  if(list.all { it % 2 == 0} ) {
+    println("true 입니다.")
+  }
+  // 출력결과 : true 입니다.
+
+}
+```
+
+<br>
+
+### none()
+
+- Collection의 요소들이 모두 조건에 만족하지 않으면 true를 반환한다.
+
+```Kotlin
+fun main() {
+  val list: List<Int> = listOf(1, 2, 3, 4)
+
+  if(list.none { it >= 10} ) {
+    println("true 입니다.")
+  }
+  // 출력결과 : true 입니다.
 }
 ```
