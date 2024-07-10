@@ -1,6 +1,6 @@
 # Row / Column
 
-### Row 컴포저블
+## Row 컴포저블
 
 - 자식 컴포넌트를 화면의 수평 방향으로 배열하는 컴포저블이다.
 
@@ -14,11 +14,9 @@ Row {
 
 <img src="../../image/Row.png" width="" height="30"/>
 
----
-
 <br>
 
-### Column 컴포저블
+## Column 컴포저블
 
 - 자식 컴포넌트를 화면의 수직방향으로 배열하는 컴포저블이다.
 
@@ -32,11 +30,9 @@ Column {
 
 <img src="../../image/Column.png" width="" height="80"/>
 
----
-
 <br>
 
-### Row와 Column 컴포저블 조합하기
+## Row와 Column 컴포저블 조합하기
 
 - 다음과 같이 Column과 Row컴포저블을 조합하여 사용할 수 있다.
 
@@ -65,9 +61,7 @@ Column {
 <img src="../../image/Column,Row.png" width="" height="95"/>
 <br><br>
 
-### 레이아웃 정렬
-
----
+## 레이아웃 정렬
 
 **수직 방향으로 정렬**
 
@@ -94,8 +88,6 @@ modifier = Modifier.size(width = 180.dp, height = 50.dp)) {
 ```
 
 <img src="../../image/Row2.png" width="" height="75"/>
-
----
 
 <br>
 
@@ -124,8 +116,6 @@ modifier = Modifier.size(width = 180.dp, height = 50.dp)) {
 ```
 
 <img src="../../image/Column2.png" width="" height="80"/>
-
----
 
 <br>
 
@@ -186,3 +176,86 @@ Column(verticalArrangement = Arrangement.Bottom,
 ```
 
 <img src="../../image/ArrangementColumn.png" width="" height="160"/>
+
+<br>
+
+## Row, Column 스코프 모디파이어
+
+- Row스코프와 Column스코프는 추가 모디파이어 함수들을 제공한다.
+- 이를 이용해 Row 또는 Column 안에 포함된 자식들의 동작이나 형태를 변경할 수 있다.
+  <br><br>
+
+### Column 스코프가 제공하는 Modifier
+
+- `Modifier.align()` <br>
+  **Alignment.CenterHorizontally**, **Aligment.Start**, **Aligment.End** 값을 이용해 <br> 자식들을 수평으로 정렬한다.
+  <br><br>
+- `Modifier.alignBy()` <br> 자식들과 **alignBy()** 모디파이어가 적용된 다른 형제를 수평으로 정렬한다.
+  <br><br>
+- `Modifier.weight()` <br>
+  형제에 할당된 가중치에 따라 자식의 높이를 설정한다.
+
+<br>
+
+### Row 스코프가 제공하는 Modifier
+
+- `Modifier.align()` <br>
+  **Alignment.CenterHorizontally**, **Aligment.Start**, **Aligment.End** 값을 이용해 <br> 자식들을 수평으로 정렬한다.
+  <br><br>
+- `Modifier.alignBy()` <br> 자식들과 **alignBy()** 모디파이어가 적용된 다른 형제를 수평으로 정렬한다.
+  <br><br>
+- `Modifier.ByBaseline()` <br>
+  자식의 베이스라인을 **alignBy()** 또는 **alignByBaseline()** 모디파이어가 이미 적용된 형제들과 정렬한다.
+  <br><br>
+- `Modifier.ByBaseline()` <br>
+  자식의 정렬라인에 패딩을 추가한다.
+  <br><br>
+- `Modifier.ByBaseline()` <br>
+  형제에 할당된 가중치에 따라 자식의 폭을 설정한다.
+
+---
+
+예제
+
+```Kotlin
+Row(modifier = Modifier.height(50.dp)) {
+    Text(" Comp1 ", Modifier.align(Alignment.Top))
+    Text(" Comp2 ", Modifier.align(Alignment.CenterVertically))
+    Text(" Comp3 ", Modifier.align(Alignment.Bottom))
+}
+```
+
+<img src="../../image/ColumnScope.png" width="" height="65"/>
+
+<br><br>
+
+## 스코프 가중치 모디파이어(weight modifier)
+
+### Row 스코프 모디파이어
+
+- 각 자식의 폭을 그 형제들을 기준으로 상대적으로 지정할 수 있다.
+- 각 자식에게 가중치 비율(0.0 ~ 1.0)을 할당한다.
+- 가중치 모디파이어가 적용되지 않은 형제 요소들을 원하는 크기로 표시되고,<br> 적용된 자식들이 나머지 공간을 공유하게 된다.
+
+---
+
+예제
+
+```Kotlin
+Row {
+        TextCell("1", Modifier.weight(weight = 0.2f, fill = true))
+        TextCell("2", Modifier.weight(weight = 0.3f, fill = true))
+        TextCell("3", Modifier.weight(weight = 0.4f, fill = true))
+    }
+```
+
+<img src="../../image/ScopeWeight.png" width="" height="65"/> <br>_참고 사진_
+
+---
+
+<br>
+
+### ColumnScope 모디파이어
+
+- ColumnScope도 `align()`, `alignBy()`, `weight()` 모디파이어를 제공하고,
+  수평축에서 동작한다.
