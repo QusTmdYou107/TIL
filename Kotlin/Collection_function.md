@@ -1,3 +1,6 @@
+이글을 보며 작성하였습니다. <br>
+https://velog.io/@haero_kim/Kotlin-Collection-%EB%82%A0%EB%A8%B9%ED%95%98%EB%8A%94-%ED%95%A8%EC%88%98%EB%93%A4
+
 # sort()
 
 - Collection을 정렬해주는 역할을 한다.
@@ -208,3 +211,25 @@ fun main() {
   // 출력결과 : true 입니다.
 }
 ```
+
+<br><br>
+
+# partition()
+
+- 배열 요소의 조건을 걸어서 pair 형태로 분리되어 <br>
+  조건에 부합하 요소는 `first`, 부합하지 않는 요소는 `second`로 가게 된다.
+
+  ```Kotlin
+  fun main() {
+
+  val list: List<Int> = listOf(1, 2, 3, 4, 5, 6)
+
+    val listToPartition = list.partition{ it % 2 == 0 }
+
+    println(listToPartition.first)
+    println(listToPartition.second)
+
+  }
+  출력 결과 : [2, 4, 6]
+             [1, 3, 5]
+  ```
