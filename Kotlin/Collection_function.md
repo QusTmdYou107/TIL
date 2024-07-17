@@ -233,3 +233,24 @@ fun main() {
   출력 결과 : [2, 4, 6]
              [1, 3, 5]
   ```
+
+  <br>
+
+# flatMap()
+
+- **Collection**을 구성하는 요소들 각각마다 원하는 형태로 <br> 새로운 **Collection**을 만들고, <br> 이 **Collection**들을 하나의 **Collection**으로 **Flatten**하여 반환한다.
+
+```Kotlin
+fun main() {
+    val list: List<Int> = listOf(1, 2, 3)
+
+    val listToFlatMap = a.flatMap {
+        listOf(it * 3, it * 4)
+    }
+
+    println(flatA)
+    // 출력 결과 : [3, 4, 6, 8, 9, 12]
+}
+```
+
+각 원소마다 `listOf(it * 3, it * 4)` 형태로 새로운 **Collection**을 만든뒤, <br> 그 **Collection**들을 하나로 **Flatten** 하기 때문에 저런 결과가 나오게 된다.
