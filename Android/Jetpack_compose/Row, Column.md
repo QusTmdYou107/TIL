@@ -14,7 +14,7 @@ Row {
 
 <img src="../../image/Row.png" width="" height="30"/>
 
-<br>
+<br>+
 
 ## Column 컴포저블
 
@@ -119,21 +119,21 @@ modifier = Modifier.size(width = 180.dp, height = 50.dp)) {
 
 <br>
 
-### 레이아웃 배열 위치 조정하기
+### 레이아웃 배치하기
 
-- 배열(Arrangement)은 자식의 위치를 컨테이너와 동일한 축을 따라서 제어한다.
+- Arrangement는 자식의 위치를 컨테이너와 동일한 축을 따라서 제어한다.
 
 ---
 
 <br>
 
-Row 인스턴스에서는 `horizontalArrangement` 를 이용해서 배열값을 선언한다.
+Row 인스턴스에서는 `horizontalArrangement` 를 이용해서 레이아웃의 배치방식을 정한다.
 
 **horizontalArrangement인스턴스**
 
-- `Arrangement.Start` : 콘텐츠를 Row 콘텐츠 영역의 수평 시작 위치에 정렬한다.
-- `Arrangement.Center` : 콘텐츠를 Row 콘텐츠 영역의 수평 중간 위치에 정렬한다.
-- `Arrangement.End`: 콘텐츠를 Row 콘텐츠 영역의 수평 끝 위치에 정렬한다.
+- `Arrangement.Start` : 콘텐츠를 Row 콘텐츠 영역의 수평 시작 위치에 배치한다.
+- `Arrangement.Center` : 콘텐츠를 Row 콘텐츠 영역의 수평 중간 위치에 배치한다.
+- `Arrangement.End`: 콘텐츠를 Row 콘텐츠 영역의 수평 끝 위치에 배치한다.
 
 ---
 
@@ -154,13 +154,13 @@ Row(horizontalArrangement = Arrangement.Center,
 
   <br>
 
-Column 인스턴스에서는 `verticalArrangement`를 이용해서 배열값을 선언한다.
+Column 인스턴스에서는 `verticalArrangement`를 이용하여 레이아웃의 배치방식을 정한다.
 
 **verticalArrangement 인스턴스**
 
-- `Arrangement.Top`: 콘텐츠를 Column 콘텐츠 영역의 수직방향 위에 정렬한다.
-- `Arrangement.Center`: 콘텐츠를 Column 콘텐츠 영역의 수직방향 가운데에 정렬한다.
-- `Arrangement.Bottom` : 콘텐츠를 Column 콘텐츠 영역의 수직방향 아래 위치에 정렬한다.
+- `Arrangement.Top`: 콘텐츠를 Column 콘텐츠 영역의 수직방향 위에 배치한다.
+- `Arrangement.Center`: 콘텐츠를 Column 콘텐츠 영역의 수직방향 가운데에 배치한다.
+- `Arrangement.Bottom` : 콘텐츠를 Column 콘텐츠 영역의 수직방향 아래 위치에 배치한다.
 
 ---
 
