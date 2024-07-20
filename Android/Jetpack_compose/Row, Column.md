@@ -175,7 +175,78 @@ Column(verticalArrangement = Arrangement.Bottom,
 }
 ```
 
-<img src="../../image/ArrangementColumn.png" width="" height="160"/>
+<br>
+
+**SpaceBetween, SpaceAround, SpaceEvenly**
+
+- 컴포넌트들간의 간격을 동일하게 맞춰주는 컴포넌트이다.
+
+---
+
+- `SpaceBetween` : 양쪽 끝 컴포넌트와 레이아웃의 간격을 0으로 만든다.(없다.)
+
+```Kotlin
+fun SpaceTest() {
+    Row(
+        horizontalArrangement = Arrangement.SpaceBetween,
+        modifier = Modifier
+            .width(250.dp)
+            .wrapContentHeight()
+    ) {
+        Text("Test1")
+        Text("Test2")
+        Text("Test3")
+    }
+}
+```
+
+<img src="../../image/SpaceBetween.png" width="" height="50"/>
+
+---
+
+<br>
+
+- `SpaceAround` : 양쪽 끝 컴포넌트와 레이아웃의 간격을 컴포넌트들간의 간격의 절반으로 만든다.
+
+```Kotlin
+fun SpaceTest() {
+    Row(
+        horizontalArrangement = Arrangement.SpaceAround,
+        modifier = Modifier
+            .width(250.dp)
+            .wrapContentHeight()
+    ) {
+        Text("Test1")
+        Text("Test2")
+        Text("Test3")
+    }
+}
+```
+
+<img src="../../image/SpaceAround.png" width="" height="50"/>
+
+---
+
+<br>
+
+- `SpaceEvenly` : 양쪽 끝 컴포넌트와 레이아웃의 간격을 컴포넌트들간의 간격과 같게 만든다.
+
+```Kotlin
+fun SpaceTest() {
+    Row(
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        modifier = Modifier
+            .width(250.dp)
+            .wrapContentHeight()
+    ) {
+        Text("Test1")
+        Text("Test2")
+        Text("Test3")
+    }
+}
+```
+
+<img src="../../image/SpaceEvenly.png" width="" height="50"/>
 
 <br>
 
